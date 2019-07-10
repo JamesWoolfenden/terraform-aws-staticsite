@@ -13,10 +13,12 @@ Terraform module to provision a secure terraform s3 bucket.
 Include this repository as a module in your existing terraform code:
 
 ```hcl
-module "s3" {
+module "static" {
 source      = "JamesWoolfenden/staticsite/aws"
-version     = "0.0.4"
-common_tags = "${var.common_tags}"
+  common_tags         = var.common_tags
+  permitted_ip_ranges = var.permitted_ip_ranges
+  environment         = var.environment
+  s3_bucket_name      = var.s3_bucket_name
 }
 ```
 
@@ -39,7 +41,6 @@ common_tags = {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | common_tags | This is a map type for applying tags on resources | map | - | yes |
-
 
 ## Outputs
 
