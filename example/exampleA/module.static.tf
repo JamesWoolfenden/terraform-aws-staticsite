@@ -1,5 +1,5 @@
 module "static" {
-  source      = "../../"
+  source              = "../../"
   common_tags         = var.common_tags
   permitted_ip_ranges = var.permitted_ip_ranges
   environment         = var.environment

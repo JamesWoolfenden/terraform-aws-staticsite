@@ -14,7 +14,8 @@ Include this repository as a module in your existing terraform code:
 
 ```hcl
 module "static" {
-source      = "JamesWoolfenden/staticsite/aws"
+  source              = "JamesWoolfenden/staticsite/aws"
+  verion              = "0.2.4"
   common_tags         = var.common_tags
   permitted_ip_ranges = var.permitted_ip_ranges
   environment         = var.environment
@@ -22,7 +23,7 @@ source      = "JamesWoolfenden/staticsite/aws"
 }
 ```
 
-## Usage
+## Module Usage
 
 This creates an s3 bucket with policy and applies the common tags scheme.
 The module uses a tagging scheme based on the map variable common_tags.
