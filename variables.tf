@@ -15,3 +15,14 @@ variable "s3_bucket_name" {
   type=string
   description="The raw name of the bucket"
 }
+
+variable "force_destroy" {
+  type=bool
+  default=true
+}
+
+variable "bucket_acl" {
+  type=string
+  default="Private"  
+}
+
