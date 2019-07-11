@@ -8,7 +8,7 @@ variable "environment" {
 }
 
 variable "permitted_ip_ranges" {
-  type=map
+  type=list
 }
 
 variable "s3_bucket_name" {
