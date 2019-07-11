@@ -1,14 +1,14 @@
 variable "common_tags" {
-  type = "map"
+  type = map
 }
 
 variable "environment" {
-  type = "string"
+  type = string
 }
 
 variable "permitted_ip_ranges" {
   description = "IP Address ranges permitted to access S3 bucket website."
-  type        = "map"
+  type        = list
 }
 
 variable "s3_bucket_name" {

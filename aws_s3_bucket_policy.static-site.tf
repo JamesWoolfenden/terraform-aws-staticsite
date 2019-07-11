@@ -14,7 +14,7 @@ resource "aws_s3_bucket_policy" "static-site" {
             "Resource": "${aws_s3_bucket.static-site.arn}/*", 
             "Condition": {
                 "IpAddress": {
-                    "aws:SourceIp": ${jsonencode(values(var.permitted_ip_ranges))}
+                    "aws:SourceIp": ${jsonencode(var.permitted_ip_ranges)}
                 }
             }
         }
