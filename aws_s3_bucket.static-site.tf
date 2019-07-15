@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "static-site" {
-  bucket = local.bucketname
-  acl    = var.bucket_acl
+  bucket = var.s3_bucket_name
+  acl    = "public-read"
   force_destroy=var.force_destroy
 
   website {
