@@ -7,13 +7,22 @@ resource "aws_s3_bucket_policy" "static-site" {
     "Id": "S3PolicyId1",
     "Statement": [
         {
-            "Sid": "IPAllow",
-            "Effect": "Allow",
+            Sid": "DenyOutsideIPfromBucket",
+            "Effect": "Deny",
             "Principal": "*",
-            "Action": "s3:*",
-            "Resource": "${aws_s3_bucket.static-site.arn}/*", 
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetBucketLocation",
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:GetObjectVersion"
+            ],
+            "Resource": [
+                "${aws_s3_bucket.static-site.arn}/*",
+                "${aws_s3_bucket.static-site.arn}"], 
             "Condition": {
-                "IpAddress": {
+                "NotIpAddress": {
                     "aws:SourceIp": ${jsonencode(var.permitted_ip_ranges)}
                 }
             }
@@ -22,5 +31,3 @@ resource "aws_s3_bucket_policy" "static-site" {
 }
 POLICY
 }
-
-
