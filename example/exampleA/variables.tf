@@ -4,9 +4,9 @@ variable "common_tags" {
 }
 
 variable "permitted_ip_ranges" {
-  type=list
+  type = list
 }
 
 variable "s3_bucket_name" {
-  type=string
+  type = string
 }
