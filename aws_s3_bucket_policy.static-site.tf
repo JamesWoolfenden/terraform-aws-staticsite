@@ -24,6 +24,9 @@ resource "aws_s3_bucket_policy" "static-site" {
             "Condition": {
                 "NotIpAddress": {
                     "aws:SourceIp": ${jsonencode(var.permitted_ip_ranges)}
+                },
+                "StringNotLike": {
+                    "aws:PrincipalArn": ${jsonencode(var.permitted_iam)}
                 }
             }
         }
