@@ -1,9 +1,10 @@
 data "aws_iam_policy_document" "bucket" {
   statement {
+    sid    = "DenyOutsideIPfromBucket"
     effect = "Deny"
     principals {
-      type        = "AWS"
-      identifiers = ["*"]
+     type = "*" 
+     identifiers = ["*"]
     }
     actions = [
       "s3:ListBucket",
@@ -16,7 +17,7 @@ data "aws_iam_policy_document" "bucket" {
 
     resources = [
       "${aws_s3_bucket.static-site.arn}/*",
-    "${aws_s3_bucket.static-site.arn}"]
+      "${aws_s3_bucket.static-site.arn}"]
 
     condition {
       test     = "NotIpAddress"
