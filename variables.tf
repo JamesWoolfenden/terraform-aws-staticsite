@@ -26,4 +26,3 @@ variable "bucket_acl" {
   type    = string
   default = "Private"
 }
-

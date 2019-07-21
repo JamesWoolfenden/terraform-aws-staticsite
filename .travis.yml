@@ -5,7 +5,7 @@ services:
 branches:
   only:
     - master
-    
+
 env:
   - VERSION="0.2.$TRAVIS_BUILD_NUMBER"
 
