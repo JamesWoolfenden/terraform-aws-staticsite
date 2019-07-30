@@ -22,13 +22,13 @@ data "aws_iam_policy_document" "bucket" {
     condition {
       test     = "NotIpAddress"
       variable = "aws:SourceIp"
-      values   = [jsonencode(var.permitted_ip_ranges)]
+      values   = var.permitted_ip_ranges
     }
 
     condition {
       test     = "StringNotLike"
       variable = "aws:PrincipalArn"
-      values   = [jsonencode(var.permitted_iam)]
+      values   = var.permitted_iam
     }
   }
 }
