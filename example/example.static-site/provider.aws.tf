@@ -1,4 +1,5 @@
 provider "aws" {
-  version = "2.20"
-  region  = "eu-west-2"
+  region  = "eu-west-1"
+  version = "2.29.0"
 }
+
