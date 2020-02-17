@@ -1,9 +1,9 @@
 
 [![Slalom][logo]](https://slalom.com)
 
-# terraform-aws-staticsite [![Build Status](https://api.travis-ci.com/JamesWoolfenden/terraform-aws-staticsite.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-staticsite) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-staticsite.svg)](https://github.com/JamesWoolfenden/terraform-aws-staticsite/releases/latest)
+# terraform-aws-staticsite [![Build Status](https://api.travis-ci.com/JamesWoolfenden/terraform-aws-staticsite.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-staticsite) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-staticsite.svg)](https://github.com/JamesWoolfenden/terraform-aws-staticsite/releases/latest) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
-Terraform module to provision a secure terraform s3 bucket as a static website.
+Terraform module to provision a secure Terraform S3 bucket as a static website.
 
 ---
 
@@ -37,28 +37,34 @@ common_tags = {
 }
 ```
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | n/a |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| bucket\_acl |  | string | `"Private"` | no |
-| common\_tags |  | map | n/a | yes |
-| force\_destroy |  | bool | `"true"` | no |
-| permitted\_iam | iam roles with access to S3 bucket website. | list | n/a | yes |
-| permitted\_ip\_ranges | IP Address ranges permitted to access S3 bucket website. | list | n/a | yes |
-| s3\_bucket\_name | The raw name of the bucket | string | n/a | yes |
+|------|-------------|------|---------|:-----:|
+| bucket\_acl | n/a | `string` | `"Private"` | no |
+| common\_tags | n/a | `map` | n/a | yes |
+| force\_destroy | n/a | `bool` | `true` | no |
+| permitted\_iam | iam roles with access to S3 bucket website. | `list` | n/a | yes |
+| permitted\_ip\_ranges | IP Address ranges permitted to access S3 bucket website. | `list` | n/a | yes |
+| s3\_bucket\_name | The raw name of the bucket | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| account\_id |  |
+| account\_id | n/a |
 | s3\_arn | The ARN of the bucket. Will be of format arn:aws:s3:::bucketname. |
 | s3\_bucket\_domain\_name | The bucket domain name. Will be of format bucketname.s3.amazonaws.com. |
 | s3\_bucket\_regional\_domain\_name | The bucket region-specific domain name. The bucket domain name including the region name, please refer here for format. Note: The AWS CloudFront allows specifying S3 region-specific endpoint when creating S3 origin, it will prevent redirect issues from CloudFront to S3 Origin URL. |
 | s3\_hosted\_zone\_id | The Route 53 Hosted Zone ID for this bucket's region. |
 | s3\_id | The name of the bucket. |
-| s3\_name |  |
+| s3\_name | n/a |
 | s3\_region | The AWS region this bucket resides in. |
 | s3\_website\_domain | The domain of the website endpoint, if the bucket is configured with a website. If not, this will be an empty string. This is used to create Route 53 alias records. |
 | s3\_website\_endpoint | The website endpoint, if the bucket is configured with a website. If not, this will be an empty string. |
@@ -86,7 +92,7 @@ Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-aws-
 
 ## Copyrights
 
-Copyright © 2019-2019 [Slalom, LLC](https://slalom.com)
+Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
 
 ## License
 
@@ -113,17 +119,15 @@ under the License.
 
 ### Contributors
 
-  [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage]
+[![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage]
 
-  [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
-  [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-
+[jameswoolfenden_homepage]: https://github.com/jameswoolfenden
+[jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
 [logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
 [website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
 [linkedin]: https://www.linkedin.com/company/slalom-consulting/
 [twitter]: https://twitter.com/Slalom
-
 [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-staticsite&url=https://github.com/JamesWoolfenden/terraform-aws-staticsite
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-staticsite&url=https://github.com/JamesWoolfenden/terraform-aws-staticsite
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-aws-staticsite
