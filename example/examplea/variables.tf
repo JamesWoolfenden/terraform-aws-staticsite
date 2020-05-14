@@ -4,11 +4,11 @@ variable "common_tags" {
 }
 
 variable "permitted_ip_ranges" {
-  description=""
-  type = list
+  description = ""
+  type        = list
 }
 
 variable "s3_bucket_name" {
-  description=""
-  type = string
+  description = ""
+  type        = string
 }

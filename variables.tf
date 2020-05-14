@@ -26,3 +26,15 @@ variable "bucket_acl" {
   type    = string
   default = "Private"
 }
+
+variable "versioning" {
+  type        = bool
+  default     = true
+  description = "Switch to control versioning"
+}
+
+variable "access_log_bucketame" {
+  type        = string
+  default     = "access_log_record"
+  description = "Name of your access logging bucket"
+}

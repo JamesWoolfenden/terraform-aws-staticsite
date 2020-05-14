@@ -27,7 +27,7 @@ module "static" {
 
 This creates an s3 bucket with policy and applies the common tags scheme.
 The module uses a tagging scheme based on the map variable common_tags.
-This needs to consist of as a minimum (in your _terraform.tfvars_):
+This needs to consist of as a minimum(in your *terraform.tfvars*):
 
 ```HCL
 common_tags = {
@@ -47,12 +47,14 @@ common_tags = {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:-----:|
+| access\_log\_bucketame | Name of your access logging bucket | `string` | `"access_log_record"` | no |
 | bucket\_acl | n/a | `string` | `"Private"` | no |
 | common\_tags | n/a | `map` | n/a | yes |
 | force\_destroy | n/a | `bool` | `true` | no |
 | permitted\_iam | iam roles with access to S3 bucket website. | `list` | n/a | yes |
 | permitted\_ip\_ranges | IP Address ranges permitted to access S3 bucket website. | `list` | n/a | yes |
 | s3\_bucket\_name | The raw name of the bucket | `string` | n/a | yes |
+| versioning | Switch to control versioning | `bool` | `true` | no |
 
 ## Outputs
 
