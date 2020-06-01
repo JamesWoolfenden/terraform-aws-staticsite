@@ -21,7 +21,7 @@ destroy:
 	terraform destroy -force
 
 docs:
-	terraform-docs md . > ../../README.md
+	terraform-docs md . > pre-commit run tf2docs
 
 valid:
 	tflint
