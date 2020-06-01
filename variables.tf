@@ -24,7 +24,7 @@ variable "force_destroy" {
 
 variable "bucket_acl" {
   type    = string
-  default = "Private"
+  default = "public-read"
 }
 
 variable "versioning" {
@@ -33,7 +33,7 @@ variable "versioning" {
   description = "Switch to control versioning"
 }
 
-variable "access_log_bucketame" {
+variable "access_log_bucket" {
   type        = string
   default     = "access_log_record"
   description = "Name of your access logging bucket"

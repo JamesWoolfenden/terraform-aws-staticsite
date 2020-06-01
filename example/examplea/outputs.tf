@@ -1,3 +1,3 @@
-output "s3_name" {
-  value = module.static.s3_name
+output "s3" {
+  value = module.static.s3
 }
