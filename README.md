@@ -21,7 +21,7 @@ Include this repository as a module in your existing terraform code:
 ```hcl
 module "static" {
   source              = "JamesWoolfenden/staticsite/aws"
-  verion              = "0.2.4"
+  version             = "0.3.1"
   common_tags         = var.common_tags
   permitted_ip_ranges = var.permitted_ip_ranges
   s3_bucket_name      = var.s3_bucket_name
@@ -41,6 +41,25 @@ common_tags = {
     environment = "develop"
 }
 ```
+
+## Checkov
+
+I have added a number of exceptions to this module:
+
+```markdown
+  #checkov:skip=CKV_AWS_52: "Ensure S3 bucket has MFA delete enabled"
+  #checkov:skip=CKV_AWS_19: "Ensure all data stored in the S3 bucket is securely encrypted at rest"
+  #checkov:skip=CKV_AWS_21: "Ensure all data stored in the S3 bucket have versioning enabled"
+  #checkov:skip=CKV_AWS_20: "S3 Bucket has an ACL defined which allows public READ access."
+  #checkov:skip=CKV_AWS_18: "Ensure the S3 bucket has access logging enabled"
+```
+
+They relate to private usage and not website - public usage.
+
+## Testing
+
+This module is validated and built and destroyed with every version.
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Providers
 
