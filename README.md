@@ -61,32 +61,7 @@ They relate to private usage and not website - public usage.
 This module is validated and built and destroyed with every version.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-## Providers
-
-| Name | Version |
-|------|---------|
-| aws | n/a |
-
-## Inputs
-
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
-| access\_log\_bucket | Name of your access logging bucket | `string` | `"access_log_record"` | no |
-| bucket\_acl | n/a | `string` | `"public-read"` | no |
-| common\_tags | n/a | `map` | n/a | yes |
-| force\_destroy | n/a | `bool` | `true` | no |
-| permitted\_iam | iam roles with access to S3 bucket website. | `list` | n/a | yes |
-| permitted\_ip\_ranges | IP Address ranges permitted to access S3 bucket website. | `list` | n/a | yes |
-| s3\_bucket\_name | The raw name of the bucket | `string` | n/a | yes |
-| versioning | Switch to control versioning | `bool` | `true` | no |
-
-## Outputs
-
-| Name | Description |
-|------|-------------|
-| account\_id | n/a |
-| s3 | n/a |
-
+Error: no lines in file
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Instructions
 
@@ -144,8 +119,8 @@ under the License.
 [logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
 [website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
-[linkedin]: https://www.linkedin.com/company/slalom-consulting/
-[twitter]: https://twitter.com/Slalom
+[linkedin]: https://www.linkedin.com/in/jameswoolfenden/
+[twitter]: https://twitter.com/JimWoolfenden
 [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-staticsite&url=https://github.com/JamesWoolfenden/terraform-aws-staticsite
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-staticsite&url=https://github.com/JamesWoolfenden/terraform-aws-staticsite
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-aws-staticsite
