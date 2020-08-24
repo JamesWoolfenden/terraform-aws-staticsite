@@ -61,7 +61,36 @@ They relate to private usage and not website - public usage.
 This module is validated and built and destroyed with every version.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-Error: no lines in file
+## Requirements
+
+No requirements.
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | n/a |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| access\_log\_bucket | Name of your access logging bucket | `string` | `"access_log_record"` | no |
+| bucket\_acl | n/a | `string` | `"public-read"` | no |
+| common\_tags | n/a | `map` | n/a | yes |
+| force\_destroy | n/a | `bool` | `true` | no |
+| permitted\_iam | iam roles with access to S3 bucket website. | `list` | n/a | yes |
+| permitted\_ip\_ranges | IP Address ranges permitted to access S3 bucket website. | `list` | n/a | yes |
+| s3\_bucket\_name | The raw name of the bucket | `string` | n/a | yes |
+| versioning | Switch to control versioning | `bool` | `true` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| account\_id | n/a |
+| s3 | n/a |
+
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Instructions
 
