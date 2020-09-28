@@ -1,6 +1,3 @@
-
-[![Slalom][logo]](https://slalom.com)
-
 # terraform-aws-staticsite
 
 [![Build Status](https://github.com/JamesWoolfenden/terraform-aws-staticsite/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-staticsite)
@@ -31,8 +28,8 @@ module "static" {
 ## Module Usage
 
 This creates an s3 bucket with policy and applies the common tags scheme.
-The module uses a tagging scheme based on the map variable common_tags.
-This needs to consist of as a minimum(in your *terraform.tfvars*):
+The module uses a tagging scheme based on the map variable common*tags.
+This needs to consist of as a minimum(in your \_terraform.tfvars*):
 
 ```HCL
 common_tags = {
@@ -47,11 +44,11 @@ common_tags = {
 I have added a number of exceptions to this module:
 
 ```markdown
-  #checkov:skip=CKV_AWS_52: "Ensure S3 bucket has MFA delete enabled"
-  #checkov:skip=CKV_AWS_19: "Ensure all data stored in the S3 bucket is securely encrypted at rest"
-  #checkov:skip=CKV_AWS_21: "Ensure all data stored in the S3 bucket have versioning enabled"
-  #checkov:skip=CKV_AWS_20: "S3 Bucket has an ACL defined which allows public READ access."
-  #checkov:skip=CKV_AWS_18: "Ensure the S3 bucket has access logging enabled"
+#checkov:skip=CKV_AWS_52: "Ensure S3 bucket has MFA delete enabled"
+#checkov:skip=CKV_AWS_19: "Ensure all data stored in the S3 bucket is securely encrypted at rest"
+#checkov:skip=CKV_AWS_21: "Ensure all data stored in the S3 bucket have versioning enabled"
+#checkov:skip=CKV_AWS_20: "S3 Bucket has an ACL defined which allows public READ access."
+#checkov:skip=CKV_AWS_18: "Ensure the S3 bucket has access logging enabled"
 ```
 
 They relate to private usage and not website - public usage.
@@ -61,6 +58,7 @@ They relate to private usage and not website - public usage.
 This module is validated and built and destroyed with every version.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Requirements
 
 No requirements.
@@ -68,30 +66,31 @@ No requirements.
 ## Providers
 
 | Name | Version |
-|------|---------|
-| aws | n/a |
+| ---- | ------- |
+| aws  | n/a     |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| access\_log\_bucket | Name of your access logging bucket | `string` | `"access_log_record"` | no |
-| bucket\_acl | n/a | `string` | `"public-read"` | no |
-| common\_tags | n/a | `map` | n/a | yes |
-| force\_destroy | n/a | `bool` | `true` | no |
-| permitted\_iam | iam roles with access to S3 bucket website. | `list` | n/a | yes |
-| permitted\_ip\_ranges | IP Address ranges permitted to access S3 bucket website. | `list` | n/a | yes |
-| s3\_bucket\_name | The raw name of the bucket | `string` | n/a | yes |
-| versioning | Switch to control versioning | `bool` | `true` | no |
+| Name                | Description                                              | Type     | Default               | Required |
+| ------------------- | -------------------------------------------------------- | -------- | --------------------- | :------: |
+| access_log_bucket   | Name of your access logging bucket                       | `string` | `"access_log_record"` |    no    |
+| bucket_acl          | n/a                                                      | `string` | `"public-read"`       |    no    |
+| common_tags         | n/a                                                      | `map`    | n/a                   |   yes    |
+| force_destroy       | n/a                                                      | `bool`   | `true`                |    no    |
+| permitted_iam       | iam roles with access to S3 bucket website.              | `list`   | n/a                   |   yes    |
+| permitted_ip_ranges | IP Address ranges permitted to access S3 bucket website. | `list`   | n/a                   |   yes    |
+| s3_bucket_name      | The raw name of the bucket                               | `string` | n/a                   |   yes    |
+| versioning          | Switch to control versioning                             | `bool`   | `true`                |    no    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| account\_id | n/a |
-| s3 | n/a |
+| Name       | Description |
+| ---------- | ----------- |
+| account_id | n/a         |
+| s3         | n/a         |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Instructions
 
 ## Related Projects
@@ -114,7 +113,7 @@ Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-aws-
 
 ## Copyrights
 
-Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
+Copyright © 2019-2020 James Woolfenden
 
 ## License
 
@@ -123,19 +122,19 @@ Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
 See [LICENSE](LICENSE) for full details.
 
 Licensed to the Apache Software Foundation (ASF) under one
-or more contributor license agreements.  See the NOTICE file
+or more contributor license agreements. See the NOTICE file
 distributed with this work for additional information
-regarding copyright ownership.  The ASF licenses this file
+regarding copyright ownership. The ASF licenses this file
 to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
-with the License.  You may obtain a copy of the License at
+with the License. You may obtain a copy of the License at
 
 <https://www.apache.org/licenses/LICENSE-2.0>
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
 "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, either express or implied.  See the License for the
+KIND, either express or implied. See the License for the
 specific language governing permissions and limitations
 under the License.
 
@@ -145,8 +144,6 @@ under the License.
 
 [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
 [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-[logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
-[website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
 [linkedin]: https://www.linkedin.com/in/jameswoolfenden/
 [twitter]: https://twitter.com/JimWoolfenden
