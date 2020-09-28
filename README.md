@@ -58,7 +58,6 @@ They relate to private usage and not website - public usage.
 This module is validated and built and destroyed with every version.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Requirements
 
 No requirements.
@@ -66,28 +65,28 @@ No requirements.
 ## Providers
 
 | Name | Version |
-| ---- | ------- |
-| aws  | n/a     |
+|------|---------|
+| aws | n/a |
 
 ## Inputs
 
-| Name                | Description                                              | Type     | Default               | Required |
-| ------------------- | -------------------------------------------------------- | -------- | --------------------- | :------: |
-| access_log_bucket   | Name of your access logging bucket                       | `string` | `"access_log_record"` |    no    |
-| bucket_acl          | n/a                                                      | `string` | `"public-read"`       |    no    |
-| common_tags         | n/a                                                      | `map`    | n/a                   |   yes    |
-| force_destroy       | n/a                                                      | `bool`   | `true`                |    no    |
-| permitted_iam       | iam roles with access to S3 bucket website.              | `list`   | n/a                   |   yes    |
-| permitted_ip_ranges | IP Address ranges permitted to access S3 bucket website. | `list`   | n/a                   |   yes    |
-| s3_bucket_name      | The raw name of the bucket                               | `string` | n/a                   |   yes    |
-| versioning          | Switch to control versioning                             | `bool`   | `true`                |    no    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| access\_log\_bucket | Name of your access logging bucket | `string` | `"access_log_record"` | no |
+| bucket\_acl | n/a | `string` | `"public-read"` | no |
+| common\_tags | n/a | `map` | n/a | yes |
+| force\_destroy | n/a | `bool` | `true` | no |
+| permitted\_iam | iam roles with access to S3 bucket website. | `list` | n/a | yes |
+| permitted\_ip\_ranges | IP Address ranges permitted to access S3 bucket website. | `list` | n/a | yes |
+| s3\_bucket\_name | The raw name of the bucket | `string` | n/a | yes |
+| versioning | Switch to control versioning | `bool` | `true` | no |
 
 ## Outputs
 
-| Name       | Description |
-| ---------- | ----------- |
-| account_id | n/a         |
-| s3         | n/a         |
+| Name | Description |
+|------|-------------|
+| account\_id | n/a |
+| s3 | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
