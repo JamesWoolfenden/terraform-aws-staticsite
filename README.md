@@ -78,10 +78,10 @@ No requirements.
 |------|-------------|------|---------|:--------:|
 | access\_log\_bucket | Name of your access logging bucket | `string` | `"access_log_record"` | no |
 | bucket\_acl | n/a | `string` | `"public-read"` | no |
-| common\_tags | n/a | `map` | n/a | yes |
+| common\_tags | n/a | `map(any)` | n/a | yes |
 | force\_destroy | n/a | `bool` | `true` | no |
-| permitted\_iam | iam roles with access to S3 bucket website. | `list` | n/a | yes |
-| permitted\_ip\_ranges | IP Address ranges permitted to access S3 bucket website. | `list` | n/a | yes |
+| permitted\_iam | iam roles with access to S3 bucket website. | `list(any)` | n/a | yes |
+| permitted\_ip\_ranges | IP Address ranges permitted to access S3 bucket website. | `list(any)` | n/a | yes |
 | s3\_bucket\_name | The raw name of the bucket | `string` | n/a | yes |
 | versioning | Switch to control versioning | `bool` | `true` | no |
 
