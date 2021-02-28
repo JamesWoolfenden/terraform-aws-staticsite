@@ -1,7 +1,6 @@
 common_tags = {
-  application = "terraform"
-  module      = "staticsite"
-  environment = "develop"
+  "createdby" = "Terraform"
+  module      = "terraform-aws-staticsite"
 }
 
 permitted_ip_ranges = ["0.0.0.0/0"]
