@@ -70,39 +70,40 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 
 ## Modules
 
-No Modules.
+No modules.
 
 ## Resources
 
-| Name |
-|------|
-| [aws_caller_identity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) |
-| [aws_s3_bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) |
-| [aws_s3_bucket_object](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_object) |
+| Name | Type |
+|------|------|
+| [aws_s3_bucket.static-site](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
+| [aws_s3_bucket_object._404](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_object) | resource |
+| [aws_s3_bucket_object.index](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_object) | resource |
+| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| access\_log\_bucket | Name of your access logging bucket | `string` | `"access_log_record"` | no |
-| bucket\_acl | n/a | `string` | `"public-read"` | no |
-| common\_tags | n/a | `map(any)` | n/a | yes |
-| force\_destroy | n/a | `bool` | `true` | no |
-| permitted\_iam | iam roles with access to S3 bucket website. | `list(any)` | n/a | yes |
-| permitted\_ip\_ranges | IP Address ranges permitted to access S3 bucket website. | `list(any)` | n/a | yes |
-| s3\_bucket\_name | The raw name of the bucket | `string` | n/a | yes |
-| versioning | Switch to control versioning | `bool` | `true` | no |
+| <a name="input_access_log_bucket"></a> [access\_log\_bucket](#input\_access\_log\_bucket) | Name of your access logging bucket | `string` | `"access_log_record"` | no |
+| <a name="input_bucket_acl"></a> [bucket\_acl](#input\_bucket\_acl) | n/a | `string` | `"public-read"` | no |
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | n/a | `map(any)` | n/a | yes |
+| <a name="input_force_destroy"></a> [force\_destroy](#input\_force\_destroy) | n/a | `bool` | `true` | no |
+| <a name="input_permitted_iam"></a> [permitted\_iam](#input\_permitted\_iam) | iam roles with access to S3 bucket website. | `list(any)` | n/a | yes |
+| <a name="input_permitted_ip_ranges"></a> [permitted\_ip\_ranges](#input\_permitted\_ip\_ranges) | IP Address ranges permitted to access S3 bucket website. | `list(any)` | n/a | yes |
+| <a name="input_s3_bucket_name"></a> [s3\_bucket\_name](#input\_s3\_bucket\_name) | The raw name of the bucket | `string` | n/a | yes |
+| <a name="input_versioning"></a> [versioning](#input\_versioning) | Switch to control versioning | `bool` | `true` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| account\_id | n/a |
-| s3 | n/a |
+| <a name="output_account_id"></a> [account\_id](#output\_account\_id) | n/a |
+| <a name="output_s3"></a> [s3](#output\_s3) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Instructions
