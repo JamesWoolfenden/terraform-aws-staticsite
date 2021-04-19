@@ -1,4 +1,8 @@
+
 resource "aws_s3_bucket" "static-site" {
+  # tfsec:ignore:AWS077
+  # tfsec:ignore:AWS017
+  # tfsec:ignore:AWS002
   # The following Checkov rules are disabled as they make no sense for a static site
   # checkov:skip=CKV_AWS_144: makes no sense
   # checkov:skip=CKV_AWS_145: Encryption makes no sense here
@@ -11,6 +15,7 @@ resource "aws_s3_bucket" "static-site" {
   bucket = var.s3_bucket_name
 
   #You can't have a canned ACL and a bucket policy
+  # tfsec:ignore:AWS001
   acl           = var.bucket_acl
   force_destroy = var.force_destroy
 
