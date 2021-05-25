@@ -9,7 +9,7 @@
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 [![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/jameswoolfenden/terraform-aws-staticsite/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-staticsite&benchmark=INFRASTRUCTURE+SECURITY)
 
-Terraform module to provision a secure Terraform S3 bucket as a static website.
+Terraform module to provision a secure Terraform S3 bucket as a static website, access via SSL only.
 
 ---
 
@@ -29,9 +29,83 @@ module "static" {
 }
 ```
 
+## Costs
+
+```text
+monthly cost estimate
+
+Project: .
+
+ Name                                       Monthly Qty  Unit         Monthly Cost
+
+ module.static.aws_s3_bucket.static-site
+ ├─ Standard
+ │  ├─ Storage                                        0  GB-months           $0.00
+ │  ├─ PUT, COPY, POST, LIST requests                 0  1k requests         $0.00
+ │  ├─ GET, SELECT, and all other requests            0  1k requests         $0.00
+ │  ├─ Select data scanned                            0  GB-months           $0.00
+ │  └─ Select data returned                           0  GB-months           $0.00
+ ├─ Intelligent tiering
+ │  ├─ Storage (frequent access)                      0  GB-months           $0.00
+ │  ├─ Storage (infrequent access)                    0  GB-months           $0.00
+ │  ├─ Monitoring and automation                      0  1k objects          $0.00
+ │  ├─ PUT, COPY, POST, LIST requests                 0  1k requests         $0.00
+ │  ├─ GET, SELECT, and all other requests            0  1k requests         $0.00
+ │  ├─ Lifecycle transition                           0  1k requests         $0.00
+ │  ├─ Select data scanned                            0  GB-months           $0.00
+ │  ├─ Select data returned                           0  GB-months           $0.00
+ │  └─ Early delete (within 30 days)                  0  GB-months           $0.00
+ ├─ Standard - infrequent access
+ │  ├─ Storage                                        0  GB-months           $0.00
+ │  ├─ PUT, COPY, POST, LIST requests                 0  1k requests         $0.00
+ │  ├─ GET, SELECT, and all other requests            0  1k requests         $0.00
+ │  ├─ Lifecycle transition                           0  1k requests         $0.00
+ │  ├─ Retrievals                                     0  GB-months           $0.00
+ │  ├─ Select data scanned                            0  GB-months           $0.00
+ │  └─ Select data returned                           0  GB-months           $0.00
+ ├─ One zone - infrequent access
+ │  ├─ Storage                                        0  GB-months           $0.00
+ │  ├─ PUT, COPY, POST, LIST requests                 0  1k requests         $0.00
+ │  ├─ GET, SELECT, and all other requests            0  1k requests         $0.00
+ │  ├─ Lifecycle transition                           0  1k requests         $0.00
+ │  ├─ Retrievals                                     0  GB-months           $0.00
+ │  ├─ Select data scanned                            0  GB-months           $0.00
+ │  └─ Select data returned                           0  GB-months           $0.00
+ ├─ Glacier
+ │  ├─ Storage                                        0  GB-months           $0.00
+ │  ├─ PUT, COPY, POST, LIST requests                 0  1k requests         $0.00
+ │  ├─ GET, SELECT, and all other requests            0  1k requests         $0.00
+ │  ├─ Lifecycle transition                           0  1k requests         $0.00
+ │  ├─ Retrieval requests (standard)                  0  1k requests         $0.00
+ │  ├─ Retrievals (standard)                          0  GB-months           $0.00
+ │  ├─ Select data scanned (standard)                 0  GB-months           $0.00
+ │  ├─ Select data returned (standard)                0  GB-months           $0.00
+ │  ├─ Retrieval requests (expedited)                 0  1k requests         $0.00
+ │  ├─ Retrievals (expedited)                         0  GB-months           $0.00
+ │  ├─ Select data scanned (expedited)                0  GB-months           $0.00
+ │  ├─ Select data returned (expedited)               0  GB-months           $0.00
+ │  ├─ Retrieval requests (bulk)                      0  1k requests         $0.00
+ │  ├─ Retrievals (bulk)                              0  GB-months           $0.00
+ │  ├─ Select data scanned (bulk)                     0  GB-months           $0.00
+ │  ├─ Select data returned (bulk)                    0  GB-months           $0.00
+ │  └─ Early delete (within 90 days)                  0  GB-months           $0.00
+ └─ Glacier deep archive
+    ├─ Storage                                        0  GB-months           $0.00
+    ├─ PUT, COPY, POST, LIST requests                 0  1k requests         $0.00
+    ├─ GET, SELECT, and all other requests            0  1k requests         $0.00
+    ├─ Lifecycle transition                           0  1k requests         $0.00
+    ├─ Retrieval requests (standard)                  0  1k requests         $0.00
+    ├─ Retrievals (standard)                          0  GB-months           $0.00
+    ├─ Retrieval requests (bulk)                      0  1k requests         $0.00
+    ├─ Retrievals (bulk)                              0  GB-months           $0.00
+    └─ Early delete (within 180 days)                 0  GB-months           $0.00
+
+ PROJECT TOTAL                                                               $0.00
+```
+
 ## Module Usage
 
-This creates an s3 bucket with policy and applies the common tags scheme.
+This creates an S3 bucket with policy and applies the common tags scheme.
 The module uses a tagging scheme based on the map variable common*tags.
 This needs to consist of as a minimum(in your \_terraform.tfvars*):
 
@@ -83,6 +157,7 @@ No modules.
 | [aws_s3_bucket.static-site](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
 | [aws_s3_bucket_object._404](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_object) | resource |
 | [aws_s3_bucket_object.index](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_object) | resource |
+| [aws_s3_bucket_policy.static-site](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_policy) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
 
 ## Inputs

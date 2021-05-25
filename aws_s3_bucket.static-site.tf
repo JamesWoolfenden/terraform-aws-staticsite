@@ -11,6 +11,7 @@ resource "aws_s3_bucket" "static-site" {
   # checkov:skip=CKV_AWS_21: "Ensure all data stored in the S3 bucket have versioning enabled"
   # checkov:skip=CKV_AWS_20: "S3 Bucket has an ACL defined which allows public READ access."
   # checkov:skip=CKV_AWS_18: "Ensure the S3 bucket has access logging enabled"
+  # checkov:skip=CKV2_AWS_6: public by design
 
   bucket = var.s3_bucket_name
 
