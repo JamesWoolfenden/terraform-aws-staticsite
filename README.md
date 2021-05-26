@@ -23,13 +23,14 @@ Include this repository as a module in your existing terraform code:
 module "static" {
   source              = "JamesWoolfenden/staticsite/aws"
   version             = "0.3.1"
-  common_tags         = var.common_tags
   permitted_ip_ranges = var.permitted_ip_ranges
   s3_bucket_name      = var.s3_bucket_name
 }
 ```
 
 ## Costs
+
+This will entirely depends on the usage of the Bucket as the storage cost of a website on S3 should be minimal.
 
 ```text
 monthly cost estimate
@@ -105,17 +106,7 @@ Project: .
 
 ## Module Usage
 
-This creates an S3 bucket with policy and applies the common tags scheme.
-The module uses a tagging scheme based on the map variable common*tags.
-This needs to consist of as a minimum(in your \_terraform.tfvars*):
-
-```HCL
-common_tags = {
-    application = "terraform"
-    module      = "staticsite"
-    environment = "develop"
-}
-```
+This creates an S3 bucket with policy and applies the default tags via the provider.
 
 ## Checkov
 
@@ -166,7 +157,6 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_access_log_bucket"></a> [access\_log\_bucket](#input\_access\_log\_bucket) | Name of your access logging bucket | `string` | `"access_log_record"` | no |
 | <a name="input_bucket_acl"></a> [bucket\_acl](#input\_bucket\_acl) | n/a | `string` | `"public-read"` | no |
-| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | n/a | `map(any)` | n/a | yes |
 | <a name="input_force_destroy"></a> [force\_destroy](#input\_force\_destroy) | n/a | `bool` | `true` | no |
 | <a name="input_permitted_iam"></a> [permitted\_iam](#input\_permitted\_iam) | iam roles with access to S3 bucket website. | `list(any)` | n/a | yes |
 | <a name="input_permitted_ip_ranges"></a> [permitted\_ip\_ranges](#input\_permitted\_ip\_ranges) | IP Address ranges permitted to access S3 bucket website. | `list(any)` | n/a | yes |

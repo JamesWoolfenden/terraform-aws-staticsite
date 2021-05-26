@@ -35,6 +35,4 @@ resource "aws_s3_bucket" "static-site" {
     allowed_origins = ["*"]
     max_age_seconds = 3000
   }
-
-  tags = var.common_tags
 }

@@ -1,7 +1,3 @@
-variable "common_tags" {
-  type = map(any)
-}
-
 variable "permitted_ip_ranges" {
   description = "IP Address ranges permitted to access S3 bucket website."
   type        = list(any)
