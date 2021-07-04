@@ -1,6 +1,7 @@
 
 resource "aws_s3_bucket" "static-site" {
   # tfsec:ignore:AWS077
+  # dont want to encrypt website
   # tfsec:ignore:AWS017
   # tfsec:ignore:AWS002
   # The following Checkov rules are disabled as they make no sense for a static site
