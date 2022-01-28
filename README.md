@@ -127,16 +127,15 @@ They relate to private usage and not website - public usage.
 This module is validated and built and destroyed with every version.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Requirements
 
 No requirements.
 
 ## Providers
 
-| Name                                             | Version |
-| ------------------------------------------------ | ------- |
-| <a name="provider_aws"></a> [aws](#provider_aws) | n/a     |
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 
 ## Modules
 
@@ -144,34 +143,33 @@ No modules.
 
 ## Resources
 
-| Name                                                                                                                                                       | Type        |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| [aws_s3_bucket.static-site](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket)                                         | resource    |
-| [aws_s3_bucket_object.\_404](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_object)                                 | resource    |
-| [aws_s3_bucket_object.index](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_object)                                 | resource    |
-| [aws_s3_bucket_policy.static-site](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_policy)                           | resource    |
-| [aws_s3_bucket_public_access_block.static-site](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block) | resource    |
-| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity)                              | data source |
+| Name | Type |
+|------|------|
+| [aws_s3_bucket.static-site](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
+| [aws_s3_bucket_object._404](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_object) | resource |
+| [aws_s3_bucket_object.index](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_object) | resource |
+| [aws_s3_bucket_policy.static-site](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_policy) | resource |
+| [aws_s3_bucket_public_access_block.static-site](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block) | resource |
+| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
 
 ## Inputs
 
-| Name                                                                                       | Description                                              | Type        | Default               | Required |
-| ------------------------------------------------------------------------------------------ | -------------------------------------------------------- | ----------- | --------------------- | :------: |
-| <a name="input_access_log_bucket"></a> [access_log_bucket](#input_access_log_bucket)       | Name of your access logging bucket                       | `string`    | `"access_log_record"` |    no    |
-| <a name="input_bucket_acl"></a> [bucket_acl](#input_bucket_acl)                            | n/a                                                      | `string`    | `"public-read"`       |    no    |
-| <a name="input_force_destroy"></a> [force_destroy](#input_force_destroy)                   | n/a                                                      | `bool`      | `true`                |    no    |
-| <a name="input_permitted_iam"></a> [permitted_iam](#input_permitted_iam)                   | iam roles with access to S3 bucket website.              | `list(any)` | n/a                   |   yes    |
-| <a name="input_permitted_ip_ranges"></a> [permitted_ip_ranges](#input_permitted_ip_ranges) | IP Address ranges permitted to access S3 bucket website. | `list(any)` | n/a                   |   yes    |
-| <a name="input_s3_bucket_name"></a> [s3_bucket_name](#input_s3_bucket_name)                | The raw name of the bucket                               | `string`    | n/a                   |   yes    |
-| <a name="input_versioning"></a> [versioning](#input_versioning)                            | Switch to control versioning                             | `bool`      | `true`                |    no    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_access_log_bucket"></a> [access\_log\_bucket](#input\_access\_log\_bucket) | Name of your access logging bucket | `string` | `"access_log_record"` | no |
+| <a name="input_bucket_acl"></a> [bucket\_acl](#input\_bucket\_acl) | n/a | `string` | `"public-read"` | no |
+| <a name="input_force_destroy"></a> [force\_destroy](#input\_force\_destroy) | n/a | `bool` | `true` | no |
+| <a name="input_permitted_iam"></a> [permitted\_iam](#input\_permitted\_iam) | iam roles with access to S3 bucket website. | `list(any)` | n/a | yes |
+| <a name="input_permitted_ip_ranges"></a> [permitted\_ip\_ranges](#input\_permitted\_ip\_ranges) | IP Address ranges permitted to access S3 bucket website. | `list(any)` | n/a | yes |
+| <a name="input_s3_bucket_name"></a> [s3\_bucket\_name](#input\_s3\_bucket\_name) | The raw name of the bucket | `string` | n/a | yes |
+| <a name="input_versioning"></a> [versioning](#input\_versioning) | Switch to control versioning | `bool` | `true` | no |
 
 ## Outputs
 
-| Name                                                              | Description |
-| ----------------------------------------------------------------- | ----------- |
-| <a name="output_account_id"></a> [account_id](#output_account_id) | n/a         |
-| <a name="output_s3"></a> [s3](#output_s3)                         | n/a         |
-
+| Name | Description |
+|------|-------------|
+| <a name="output_account_id"></a> [account\_id](#output\_account\_id) | n/a |
+| <a name="output_s3"></a> [s3](#output\_s3) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Instructions
