@@ -4,5 +4,5 @@ output "account_id" {
 }
 
 output "s3" {
-  value = aws_s3_bucket.static-site
+  value = aws_s3_bucket.static_site
 }
