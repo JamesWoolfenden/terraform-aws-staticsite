@@ -1,13 +1,11 @@
 
 resource "aws_s3_bucket" "static_site" {
-  # tfsec:ignore:AWS077
-  # don't want to encrypt website
-  # tfsec:ignore:AWS017
-  # tfsec:ignore:AWS002
+
   # The following Checkov rules are disabled as they make no sense for a static site
   # checkov:skip=CKV_AWS_144: makes no sense
   # checkov:skip=CKV_AWS_145: Legacy v4 provider
   # checkov:skip=CKV_AWS_52: Legacy v4 provider
+  # checkov:skip=CKV_AWS_57: Legacy v4 provider
   # checkov:skip=CKV_AWS_19: Legacy v4 provider
   # checkov:skip=CKV_AWS_21: Legacy v4 provider
   # checkov:skip=CKV_AWS_20: Legacy v4 provider
@@ -20,11 +18,7 @@ resource "aws_s3_bucket" "static_site" {
 
   bucket = var.s3_bucket_name
 
-  #You can't have a canned ACL and a bucket policy
-  # tfsec:ignore:AWS001
   force_destroy = var.force_destroy
-
-
 }
 
 resource "aws_s3_bucket_website_configuration" "static_site" {
