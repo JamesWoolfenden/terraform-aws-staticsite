@@ -1,5 +1,7 @@
 
 resource "aws_s3_bucket" "static_site" {
+  # checkov:skip=CKV2_AWS_61: Lifecycle configuration not required for this bucket
+  # checkov:skip=CKV2_AWS_62: Event notifications not required for this bucket
 
   # The following Checkov rules are disabled as they make no sense for a static site
   # checkov:skip=CKV_AWS_144: makes no sense
