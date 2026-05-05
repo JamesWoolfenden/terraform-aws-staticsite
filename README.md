@@ -196,12 +196,25 @@ resource "aws_iam_policy" "terraform_pike" {
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
+                "ec2:DescribeAccountAttributes"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
                 "s3:CreateBucket",
                 "s3:DeleteBucket",
+                "s3:DeleteBucketPolicy",
+                "s3:DeleteBucketWebsite",
                 "s3:DeleteObject",
                 "s3:GetAccelerateConfiguration",
                 "s3:GetBucketAcl",
                 "s3:GetBucketCORS",
+                "s3:GetBucketLocation",
                 "s3:GetBucketLogging",
                 "s3:GetBucketObjectLockConfiguration",
                 "s3:GetBucketPolicy",
@@ -219,12 +232,16 @@ resource "aws_iam_policy" "terraform_pike" {
                 "s3:ListAllMyBuckets",
                 "s3:ListBucket",
                 "s3:PutBucketAcl",
+                "s3:PutBucketCORS",
                 "s3:PutBucketPolicy",
                 "s3:PutBucketPublicAccessBlock",
                 "s3:PutBucketVersioning",
+                "s3:PutBucketWebsite",
                 "s3:PutObject"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         }
     ]
 })
