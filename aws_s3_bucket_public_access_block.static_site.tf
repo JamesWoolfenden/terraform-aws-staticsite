@@ -5,12 +5,8 @@ resource "aws_s3_bucket_public_access_block" "static_site" {
   # checkov:skip=CKV_AWS_56: Not appropriate
   bucket = aws_s3_bucket.static_site.id
 
-  # tfsec:ignore:AWS074
-  block_public_acls = false
-  # tfsec:ignore:AWS075
+  block_public_acls       = false
   restrict_public_buckets = false
-  # tfsec:ignore:AWS076
-  block_public_policy = false
-  # tfsec:ignore:AWS073
-  ignore_public_acls = false
+  block_public_policy     = false
+  ignore_public_acls      = false
 }
